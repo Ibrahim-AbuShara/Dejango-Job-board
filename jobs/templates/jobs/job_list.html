@@ -129,7 +129,7 @@
                                             <img src="{{job.img.url}}" alt=""width="70"  height="100">
                                         </div>
                                         <div class="jobs_conetent">
-                                            <a href="{{job.id}}"><h4>{{job}}</h4></a>
+                                            <a href="{% url 'jobs:job_detalis' job.id %}"><h4>{{job}}</h4></a>
                                             <div class="links_locat d-flex align-items-center">
                                                 <div class="location">
                                                     <p> <i class="fa fa-map-marker"></i> California, USA</p>
@@ -151,8 +151,9 @@
                                     </div>
                                 </div>
                             </div>
-                            {% endfor %}
+                           {% endfor %}
                         </div>
+                         
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="pagination_wrap">

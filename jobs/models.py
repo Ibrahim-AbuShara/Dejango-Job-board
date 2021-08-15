@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField
+from django.utils.text import slugify
 Job_Type=(('full time','part time'),('part time','full time'))
 # Create your models here.
 class Category(models.Model):
@@ -24,6 +25,12 @@ class jobs(models.Model):
     excprince =models.IntegerField(default=1)
     category=models.ForeignKey(Category,on_delete=CASCADE)
     img = models.ImageField(max_length=256, upload_to=img_name)
+    slug=models.SlugField(blank=True,null=True)
+
+    def save(self,*args, **kwargs):
+        self.slug=slugify(self.title)
+        super(jobs,self).save(*args, **kwargs)
+
 
     def __str__(self) -> str:
         return self.title

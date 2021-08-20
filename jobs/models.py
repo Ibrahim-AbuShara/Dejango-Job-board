@@ -24,7 +24,7 @@ class jobs(models.Model):
     salary=models.IntegerField(default=0)
     excprince =models.IntegerField(default=1)
     category=models.ForeignKey(Category,on_delete=CASCADE)
-    img = models.ImageField(max_length=256, upload_to=img_name)
+    #img = models.ImageField(max_length=256, upload_to=img_name)
     slug=models.SlugField(blank=True,null=True)
 
     def save(self,*args, **kwargs):
@@ -34,3 +34,17 @@ class jobs(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+class Apply(models.Model):
+    job =models.ForeignKey(jobs,related_name='apply_job',on_delete=CASCADE)
+    name=models.CharField(max_length=50)
+    email=models.EmailField()
+    website=models.URLField()
+    cv=models.FileField(upload_to='cvs/')
+    letter=models.TextField(max_length=1500)
+    Apply_at=models.DateTimeField(auto_now=True)
+    def __str__(self) -> str:
+        return self.name
+
+
+

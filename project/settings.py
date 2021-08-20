@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Apps
-    'jobs','home','contacs','blogs','accounts',
+    'jobs','home','contacs','blogs','accounts','bootstrap4'
     
 ]
 

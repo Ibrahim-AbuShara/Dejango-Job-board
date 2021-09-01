@@ -9,10 +9,11 @@ from django.urls import reverse
 # Create your views here.
 def job_list(request):
     job_list=jobs.objects.all()
+    counter=job_list.count()
     paginator = Paginator(job_list, 2)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    context={"jobs":page_obj}
+    context={"jobs":page_obj,"counter":counter}
     return render(request,'jobs/job_list.html',context)
 
 

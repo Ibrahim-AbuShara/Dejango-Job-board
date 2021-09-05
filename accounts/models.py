@@ -17,6 +17,7 @@ class Profile(models.Model):
     phone=PhoneNumberField()
     country=CountryField()
     birth_date = models.DateField('Date of Birth', null=True, blank=True)
+   
     @receiver(post_save, sender=User)
 
     def create_user_profile(sender, instance, created, **kwargs):
@@ -24,7 +25,7 @@ class Profile(models.Model):
             Profile.objects.create(user=instance)
 
 
-    def __str__(self):
-        return self.user
+    def __str__(self) -> str:
+        return str(self.user)
 
     

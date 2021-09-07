@@ -19,4 +19,4 @@ class Profile_Data(forms.ModelForm):
     class Meta:
         model = Profile
         fields = '__all__'
-        exclude=['user']
+        exclude=['user','email']

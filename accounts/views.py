@@ -36,6 +36,8 @@ def edit (request):
         profileform=Profile_Data(request.POST,request.FILES,instance=profile)
         if userform.is_valid() and profileform.is_valid():
             userform.save()
+            profileform.save(commit=False)
+            profileform.user=request.user
             profileform.save()
         return redirect(reverse('accounts:profile'))            
            

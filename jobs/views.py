@@ -5,6 +5,7 @@ from .models import jobs,Apply
 from django.core.paginator import Paginator
 from django import forms
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def job_list(request):
@@ -34,8 +35,7 @@ def job_detalis(request,slug):
    context={'job':job_detalis,'form':form}
    return render(request,'jobs/job_ditales.html',context)
 
-
-
+@login_required
 def post(request):
      if request.method == 'POST':
         form=Post_job(request.POST , request.FILES )

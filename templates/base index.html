@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -43,8 +44,8 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo.png" alt="">
+                                    <a href="#"></a>
+                                        <img src="{% static 'img/logo.png' %}" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -52,21 +53,11 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">home</a></li>
-                                            <li><a href="jobs.html">Browse Job</a></li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="candidate.html">Candidates </a></li>
-                                                    <li><a href="job_details.html">job details </a></li>
-                                                    <li><a href="elements.html">elements</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="{% url 'home:home' %}">home</a></li>
+                                            <li><a href="{% url 'jobs:job_list' %}" >Browse Job</a></li>
+                                           
+                                            <li><a href="#">blog </a></li>
+                                                
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -113,7 +104,7 @@
             </div>
         </div>
         <div class="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
-            <img src="img/banner/illustration.png" alt="">
+            <img src="{% static 'img/banner/illustration.png' %}" alt="">
         </div>
     </div>
     <!-- slider_area_end -->
@@ -144,91 +135,91 @@
                     <div class="candidate_active owl-carousel">
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/1.png" alt="">
+                                <img src="{% static 'img/candiateds/1.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/2.png" alt="">
+                                <img src="{% static 'img/candiateds/2.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/3.png" alt="">
+                                <img src="{% static 'img/candiateds/3.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/4.png" alt="">
+                                <img src="{% static 'img/candiateds/4.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/5.png" alt="">
+                                <img src="{% static 'img/candiateds/5.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/6.png" alt="">
+                                <img src="{% static 'img/candiateds/6.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/7.png" alt="">
+                                <img src="{% static 'img/candiateds/7.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/8.png" alt="">
+                                <img src="{% static 'img/candiateds/8.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/9.png" alt="">
+                                <img src="{% static 'img/candiateds/9.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/9.png" alt="">
+                                <img src="{% static 'img/candiateds/9.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/10.png" alt="">
+                                <img src="{% static 'img/candiateds/10.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/3.png" alt="">
+                                <img src="{% static 'img/candiateds/3.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
                         </div>
                         <div class="single_candidates text-center">
                             <div class="thumb">
-                                <img src="img/candiateds/4.png" alt="">
+                                <img src="{% static 'img/candiateds/4.png' %}" alt="">
                             </div>
                             <a href="#"><h4>Markary Jondon</h4></a>
                             <p>Software Engineer</p>
@@ -281,7 +272,7 @@
                                 <div class="col-lg-11">
                                     <div class="single_testmonial d-flex align-items-center">
                                         <div class="thumb">
-                                            <img src="img/testmonial/author.png" alt="">
+                                            <img src="{% static 'img/testmonial/author.png' %}" alt="">
                                             <div class="quote_icon">
                                                 <i class="Flaticon flaticon-quote"></i>
                                             </div>
@@ -299,7 +290,7 @@
                                 <div class="col-lg-11">
                                     <div class="single_testmonial d-flex align-items-center">
                                         <div class="thumb">
-                                            <img src="img/testmonial/author.png" alt="">
+                                            <img src="{% static 'img/testmonial/author.png' %}" alt="">
                                             <div class="quote_icon">
                                                 <i class=" Flaticon flaticon-quote"></i>
                                             </div>
@@ -317,7 +308,7 @@
                                 <div class="col-lg-11">
                                     <div class="single_testmonial d-flex align-items-center">
                                         <div class="thumb">
-                                            <img src="img/testmonial/author.png" alt="">
+                                            <img src="{% static 'img/testmonial/author.png' %}" alt="">
                                             <div class="quote_icon">
                                                 <i class="Flaticon flaticon-quote"></i>
                                             </div>
@@ -347,7 +338,7 @@
                         <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="/logo.png"> alt="">
+                                    <img src="/logo.png' %}"> alt="">
                                 </a>
                             </div>
                             <p>

@@ -516,12 +516,13 @@ mark {
 }
 
 .img-thumbnail {
-    padding: .25rem;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: .25rem;
+    padding: .22rem;
+    background-color: rgb(8, 8, 8);
+    border: 1px solid #00060c;
+    border-radius: .22rem;
     max-width: 100%;
     height: auto
+    
 }
 
 .figure {
@@ -530,6 +531,7 @@ mark {
 
 .figure-img {
     margin-bottom: .5rem;
+    margin-left: .5rem;
     line-height: 1
 }
 

@@ -12,9 +12,7 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.cataegoty
 
-def img_name(instance,fn):
-    name='jobs/%s.png'% instance.id
-    return name
+
 
 
 class jobs(models.Model):
@@ -27,7 +25,7 @@ class jobs(models.Model):
     salary=models.IntegerField(default=0)
     excprince =models.IntegerField(default=1)
     category=models.ForeignKey(Category,on_delete=CASCADE)
-    img = models.ImageField(max_length=256, upload_to=img_name)
+    img = models.ImageField(max_length=256, upload_to='jobs/')
     slug=models.SlugField(blank=True,null=True)
 
     def save(self,*args, **kwargs):

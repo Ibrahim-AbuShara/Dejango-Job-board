@@ -1,6 +1,18 @@
 {% extends "base_generic.html" %}
-
+{%load static%}
 {% block content %}
-  <p>Logged out!</p>
-  <a href="{% url 'login'%}">Click here to login again.</a>
+
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-7 col-md-6">
+                  <div class="slider_text">
+                      <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">Logged out!</h5>
+                          <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                          <a href="{% url 'login'%}" class="boxed-btn3"> login again.</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
 {% endblock %}

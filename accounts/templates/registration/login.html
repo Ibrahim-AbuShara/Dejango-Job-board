@@ -1,8 +1,21 @@
-{% extends "base index.html" %}
+{% extends "base_generic.html" %}
 {% load bootstrap4 %}
 
 {% block content %}
-
+{% if request.user.is_authenticated %}
+<div class="container">
+  <div class="row align-items-center">
+      <div class="col-lg-7 col-md-6">
+          <div class="slider_text">
+              <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">You already logged in ,{{request.user}}!</h5>
+                  <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                  <a href="{% url 'jobs:job_list' %}" class="boxed-btn3"> browse some jobs?</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% else %}
   {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
@@ -25,5 +38,5 @@
   {# Assumes you setup the password_reset view in your URLconf #}
   <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
   
-
+  {% endif %}
 {% endblock %}

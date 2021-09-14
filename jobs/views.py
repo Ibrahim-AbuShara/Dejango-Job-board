@@ -6,15 +6,18 @@ from django.core.paginator import Paginator
 from django import forms
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from.filters import JobFilter
 
 # Create your views here.
 def job_list(request):
     job_list=jobs.objects.all()
     counter=job_list.count()
+    filter=JobFilter(request.GET,queryset=job_list)
+    job_list=filter.qs
     paginator = Paginator(job_list, 2)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    context={"jobs":page_obj,"counter":counter}
+    context={"jobs":page_obj,"counter":counter,'filter':filter}
     return render(request,'jobs/job_list.html',context)
 
 

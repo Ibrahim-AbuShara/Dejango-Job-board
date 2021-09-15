@@ -17,9 +17,5 @@ def contact(request):
                  fail_silently=True,
                  
                  )
-        print(subject)
-        print(name)
-        print(email)
-        print(message)
 
     return render(request,'contact.html')

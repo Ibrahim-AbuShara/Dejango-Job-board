@@ -5,7 +5,7 @@ from . import views
 app_name='contacs'
 urlpatterns = [
     
-    path('',views.contact, name='job_list'),
+    path('',views.contact, name='contacs'),
    
     
 ]

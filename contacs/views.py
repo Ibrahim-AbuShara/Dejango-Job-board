@@ -17,5 +17,4 @@ def contact(request):
                  fail_silently=True,
                  
                  )
-
     return render(request,'contact.html')

@@ -25,6 +25,7 @@ urlpatterns = [
     path('accounts/',include('accounts.urls',namespace='accounts')),
     path('admin/', admin.site.urls),
     path('jobs/',include('jobs.urls',namespace='jobs')), 
+    path('api-auth/', include('rest_framework.urls')),
     path('contacs/',include('contacs.urls',namespace='contacs')), 
 
               ]

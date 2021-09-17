@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     # Apps
     'jobs','home','contacs','blogs','bootstrap4'
     

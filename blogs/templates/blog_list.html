@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>blog</h3>
+                        <h3>blogs</h3>
                     </div>
                 </div>
             </div>
@@ -55,24 +55,27 @@
                         
 
                         <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            {% if blogs.has_other_pages %}
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="pagination_wrap">
+                                        <ul>
+                                            {% if blogs.has_previous %}
+                                                
+                                                <li><a href="?page={{ blogs.previous_page_number }}"> <i class="ti-angle-left"></i> </a></li>
+                                            {% endif %}
+    
+                                            {% for i in blogs.paginator.page_range %}
+                                                <li><a href="?page={{i}}"><span>{{i}}</span></a></li>
+                                            {% endfor %}
+                                            {% if blogs.has_next %}
+                                                <li><a href="?page={{ blogs.next_page_number }}"> <i class="ti-angle-right"></i> </a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                           {% endif %}  
                         </nav>
                     </div>
                 </div>

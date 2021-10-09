@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             name='Profile',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('img', models.ImageField(upload_to='images/')),
+                
                 ('phone', phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None)),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

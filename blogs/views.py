@@ -28,7 +28,7 @@ def post_blog(request):
 
 def blog_detail(request,id):
     blog=Blog.objects.get(id=id)
-    coment_static=Comment.objects.all()
+    coment_static=Comment.objects.filter(blog=blog)
     if request.method == 'POST':
         form=Comment_form(request.POST , request.FILES )
         if form.is_valid():

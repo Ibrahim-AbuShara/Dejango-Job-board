@@ -30,7 +30,7 @@
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0" src={{blog.img.url}} width="820px" height="312x" alt="">
-                                <a href="#" class="blog_item_date">
+                                <a href={{blog.id}} class="blog_item_date">
                                     <h3>{{blog.published_at|date:"d"}}</h3>
                                     <p>{{blog.published_at|date:"M"}}</p>
                                 </a>
@@ -42,8 +42,8 @@
                                 </a>
                                 <p>{{blog.head_line}}.</p>
                                 <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> {{blog.user}}</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i>  Comments</a></li>
+                                    <li><i class="fa fa-user"></i> {{blog.user}}</a></li>
+                                    
                                 </ul>
                             </div>
                         </article>

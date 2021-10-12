@@ -17,7 +17,7 @@ class  Comment(models.Model):
         published_at=models.DateTimeField(auto_now=True)
         blog=models.ForeignKey(Blog, verbose_name=("blog"), on_delete=models.CASCADE)
         def __str__(self) -> str:
-            return self.blog
+            return str(self.blog)
         
 
 

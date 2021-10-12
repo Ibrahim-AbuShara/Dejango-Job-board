@@ -4,6 +4,7 @@ from blogs.forms import Blog_form
 from .models import Blog,Comment
 from django.core.paginator import Paginator
 from .forms import Blog_form,Comment_form
+from django.http import  HttpResponseRedirect
 
 def blog_list(request):
     blogs=Blog.objects.all()
@@ -29,6 +30,7 @@ def post_blog(request):
 def blog_detail(request,id):
     blog=Blog.objects.get(id=id)
     coment_static=Comment.objects.filter(blog=blog)
+    comment_lengh=coment_static.count()
     if request.method == 'POST':
         form=Comment_form(request.POST , request.FILES )
         if form.is_valid():
@@ -37,12 +39,12 @@ def blog_detail(request,id):
             myform.user=request.user
             myform.blog=blog
             myform.save()
-            return redirect(reverse('blogs:blogs'))
+            return HttpResponseRedirect('#')
 
             
     else:
         comment=Comment_form()
-        return render(request,'blogl_detales.html',{"blog":blog,'form':comment,"comments":coment_static})
+        return render(request,'blogl_detales.html',{"blog":blog,'form':comment,"comments":coment_static,"comment_lengh":comment_lengh})
 
 
 

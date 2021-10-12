@@ -10,3 +10,14 @@ class Blog(models.Model):
     subject = models.TextField(blank=True)
     def __str__(self) -> str:
         return self.title
+
+class  Comment(models.Model):
+        user=models.ForeignKey(User, verbose_name=("user"), on_delete=models.CASCADE)
+        comment = models.TextField()
+        published_at=models.DateTimeField(auto_now=True)
+        blog=models.ForeignKey(Blog, verbose_name=("blog"), on_delete=models.CASCADE)
+        def __str__(self) -> str:
+            return self.blog
+        
+
+

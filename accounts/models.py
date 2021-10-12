@@ -13,9 +13,9 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=CASCADE)
-    img=models.ImageField(upload_to='images/')
     phone=PhoneNumberField()
     country=CountryField()
+    img=models.ImageField(upload_to='images/')
     birth_date = models.DateField('Date of Birth', null=True, blank=True)
    
     @receiver(post_save, sender=User)

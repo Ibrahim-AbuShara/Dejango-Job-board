@@ -1,0 +1,89 @@
+
+   {% extends "base.html" %}
+   {% block bodey %}
+     
+  
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>blogs</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                
+                  
+              
+                <div class="col-lg-8 mb-5 mb-lg-0 mx-auto">
+                    {% for blog in blogs  %}
+                    <div class="blog_left_sidebar">
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src={{blog.img.url}} width="820px" height="312x" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>{{blog.published_at|date:"d"}}</h3>
+                                    <p>{{blog.published_at|date:"M"}}</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href={{blog.id}}>
+                                    <h2>{{blog.title}}</h2>
+                                </a>
+                                <p>{{blog.head_line}}.</p>
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="fa fa-user"></i> {{blog.user}}</a></li>
+                                    <li><a href="#"><i class="fa fa-comments"></i>  Comments</a></li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        
+                        {% endfor %}
+
+                       
+                        
+
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            {% if blogs.has_other_pages %}
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="pagination_wrap">
+                                        <ul>
+                                            {% if blogs.has_previous %}
+                                                
+                                                <li><a href="?page={{ blogs.previous_page_number }}"> <i class="ti-angle-left"></i> </a></li>
+                                            {% endif %}
+    
+                                            {% for i in blogs.paginator.page_range %}
+                                                <li><a href="?page={{i}}"><span>{{i}}</span></a></li>
+                                            {% endfor %}
+                                            {% if blogs.has_next %}
+                                                <li><a href="?page={{ blogs.next_page_number }}"> <i class="ti-angle-right"></i> </a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                           {% endif %}  
+                        </nav>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area =================-->
+    
+
+    {% endblock bodey %}

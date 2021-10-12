@@ -55,7 +55,12 @@
                                         <ul id="navigation">
                                             <li><a href="#">home</a></li>
                                             <li><a href="jobs/">Browse Job</a></li>
-                                            <li><a href="#">blog </a></li>
+                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="{% url 'blogs:blogs' %}">blogs</a></li>
+                                                    <li><a href="{% url 'blogs:blogpost' %}">Post a blog</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="{% url 'contacs:contacs' %}">Contact</a></li>
                                         </ul>
                                     </nav>

@@ -2,6 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import jobs
 from .serializers import JobSerializer
+#ViewSets
 
 @api_view()
 def joblist_api(request):
